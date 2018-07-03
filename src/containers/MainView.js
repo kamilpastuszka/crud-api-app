@@ -3,37 +3,27 @@ import '../index.css';
 import axios from 'axios';
 import { Cake } from '../components/Cake';
 import { Header } from '../components/Header';
+import { fetchCakes } from '../store/actions/actions';
+import { connect } from 'react-redux';
 
 
 class MainView extends Component {
-  constructor() {
-    super();
-    this.state = {
-      items: [],
-      error: ""
-    }
+  constructor(props) {
+    super(props);
+
   }
 
   componentDidMount() {
-    var items = this.state.items;
-    axios.get('http://ec2-34-243-153-154.eu-west-1.compute.amazonaws.com:5000/api/cakes')
-      .then(response => {
-        this.setState({ items: response.data });
-        console.log(response);
-      },
-        (error) => {
-          let failedRequest = "Error: fetching API data was not successful";
-          this.setState({ error: failedRequest });
-          console.log(error);
-        }
-      )
+    this.props.onFetchCakes()
   }
 
   render() {
-   const errorMessage = this.state.error;
-   const itemsArray = this.state.items.map((item) => {
+   const errorMessage = this.props.error;
+   console.log(this.props.error);
+   console.log(this.props.cakes);
+   const itemsArray = this.props.cakes.map((cake) => {
       return (
-        <Cake key={item.id} image={item.imageUrl} name={item.name} />
+        <Cake key={cake.id} image={cake.imageUrl} name={cake.name} />
       )
     });
 
@@ -47,5 +37,19 @@ class MainView extends Component {
   }
 }
 
-export default MainView;
+const mapStateToProps = (state) => {
+  return {
+    cakes: state.cakes,
+    error: state.error
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onFetchCakes: () => dispatch(fetchCakes())
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (MainView);
 
