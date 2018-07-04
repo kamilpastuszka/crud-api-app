@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../index.css';
-import axios from 'axios';
-import { Cake } from '../components/Cake';
+import { CakeList } from '../components/CakeList';
 import { Header } from '../components/Header';
 import { fetchCakes } from '../store/actions/actions';
 import { connect } from 'react-redux';
@@ -23,7 +22,7 @@ class MainView extends Component {
    console.log(this.props.cakes);
    const itemsArray = this.props.cakes.map((cake) => {
       return (
-        <Cake key={cake.id} image={cake.imageUrl} name={cake.name} />
+        <CakeList key={cake.id} image={cake.imageUrl} name={cake.name} />
       )
     });
 

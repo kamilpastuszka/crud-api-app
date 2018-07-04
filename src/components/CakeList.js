@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Cake = (props) => {
+export const CakeList = (props) => {
   return (
     <div className="col-md-3">
       <div className="thumbnail">
