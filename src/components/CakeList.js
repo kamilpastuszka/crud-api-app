@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const CakeList = (props) => {
+export const CakeList = ({id, image, name}) => {
   return (
-    <div className="col-md-3">
+   <div className="cal-lg-4">
       <div className="thumbnail">
-          <img src={props.image}/>
+        <Link to={`/${id}`}>
+          <img src={image}/>
+        </Link>
           <div className="caption">
-            <h3>{props.name}</h3>
+            <h3>{name}</h3>
           </div>
       </div>
-      </div>
+    </div>
   )
-}
+};
