@@ -1,16 +1,15 @@
 import React from 'react'
 
 export const CakeForm = (props) => (
-    
-      <div>
+    <div>
 
       <form onSubmit={props.submit}>
+
       <div className="form-group col-lg-6" >
       <label for="name">Name</label>
       <input type="text" className="form-control" name="name" 
         value={props.name} onChange={props.changed}/>
       </div>
-
 
       <div className="form-group col-lg-6">
       <label for="name">Comment</label>
@@ -31,7 +30,8 @@ export const CakeForm = (props) => (
         <button type="submit">submit</button> 
       </div>
       <br/>
+    
       </form >
-      </div>
+    </div>
     )
 

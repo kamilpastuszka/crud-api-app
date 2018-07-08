@@ -13,10 +13,10 @@ img {
 }
 
 .row {
-  display: flex;
+  display: inline;
 }
 
 .column {
-  flex: 33.33%;
+  width: 33.33%;
   padding: 5px;
 }

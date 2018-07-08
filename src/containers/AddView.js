@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {CakeForm} from '../components/CakeForm';
+import { CakeForm } from '../components/CakeForm';
 import { addCake } from '../store/actions/actions';
 import { connect } from 'react-redux'
 
@@ -40,7 +40,7 @@ class AddView extends Component {
           name={this.state.name}
           comment={this.state.comment}
           yumFactor={this.state.yumFactor}
-          image={this.state.imageUrl}
+          imageUrl={this.state.imageUrl}
           changed={this.handleChange}
           submit={this.handleSubmit}   
         />

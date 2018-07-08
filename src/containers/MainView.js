@@ -22,7 +22,7 @@ class MainView extends Component {
    console.log(this.props.cakes);
    const itemsArray = this.props.cakes.map((cake) => {
       return (
-        <CakeList key={cake.id} image={cake.imageUrl} name={cake.name} id={cake.id} />
+        <CakeList key={cake.id} imageUrl={cake.imageUrl} name={cake.name} id={cake.id} />
       )
     });
 

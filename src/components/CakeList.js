@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const CakeList = ({id, image, name}) => {
+export const CakeList = ({id, imageUrl, name}) => {
   return (
    <div className="cal-lg-4">
       <div className="thumbnail">
         <Link to={`/${id}`}>
-          <img src={image}/>
+          <img src={imageUrl}/>
         </Link>
           <div className="caption">
             <h3>{name}</h3>
