@@ -1,5 +1,4 @@
 import * as actionTypes from "../actions/actionTypes";
-import { bindActionCreators } from "../../../../../../Users/KK/AppData/Local/Microsoft/TypeScript/2.9/node_modules/redux";
 
 const initialState = {
     cakes: [],
@@ -61,8 +60,7 @@ export const cakesReducer = (state = initialState, action) => {
             error: action.error
         };
 
-        default: {
-            return state;
-        };
-     };
- };
+        default: return state;
+    
+     }
+ }

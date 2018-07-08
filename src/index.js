@@ -7,6 +7,7 @@ import {cakesReducer} from './store/reducers/cakesReducer';
 import './index.css';
 import Routes from './routes/Routes';
 import registerServiceWorker from './registerServiceWorker';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

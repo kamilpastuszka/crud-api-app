@@ -18,20 +18,26 @@ class SingleView extends Component {
   render() {
     return (
       <div>
-      <h3> {this.props.cake.name} </h3>
-      
-      <h4> {this.props.cake.comment} </h4>
-
-      <h4> {this.props.cake.yumFactor} </h4>
-      
+      <div className="well well-lg">
+      <h2> {this.props.cake.name} </h2>
+      <h4>{this.props.cake.comment}</h4>
+      <h4> yumFactor: <a href="#"> <span className="badge">{this.props.cake.yumFactor} </span></a></h4>
+      </div>
+     
       <img src={this.props.cake.imageUrl}/>
-
-      <button onClick={this.deleteCake}> Delete</button>
+      <br/>
       
+      <div className="row">
+      <button className="btn btn-lg btn-danger" onClick={this.deleteCake}>Delete</button>
+ 
       <Link to={`/edit/${this.props.cake.id}`}>
-      <button> Edit</button>
+      <button className="btn btn-lg btn-primary">Edit</button>
       </Link>
 
+      <Link to={`/`}>
+      <button className="btn btn-lg btn-warning">Cancel</button>
+      </Link>      
+      </div>
       </div>
     )
   }

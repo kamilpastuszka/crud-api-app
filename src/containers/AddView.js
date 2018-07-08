@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { CakeForm } from '../components/CakeForm';
 import { addCake } from '../store/actions/actions';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import {Header} from '../components/Header';
 
 class AddView extends Component {
   constructor(props) {
@@ -27,7 +28,6 @@ class AddView extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('hadle submit state', this.state)
     this.props.onAddCake(this.state);
     this.props.history.push('/');
   }
@@ -35,7 +35,7 @@ class AddView extends Component {
   render() {    
     return (
       <div>
-        <h2> Add View</h2>
+        <h2> Add New Cake  </h2>
         <CakeForm
           name={this.state.name}
           comment={this.state.comment}

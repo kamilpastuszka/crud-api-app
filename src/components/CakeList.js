@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 
 export const CakeList = ({id, imageUrl, name}) => {
   return (
-   <div className="cal-lg-4">
-      <div className="thumbnail">
+  <div class="col-md-4">
+    <div className="thumbnail">
         <Link to={`/${id}`}>
           <img src={imageUrl}/>
         </Link>
-          <div className="caption">
-            <h3>{name}</h3>
-          </div>
       </div>
+      <h3>{name}</h3>
     </div>
   )
 };

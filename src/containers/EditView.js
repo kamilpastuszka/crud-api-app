@@ -14,7 +14,6 @@ class EditView extends Component {
       yumFactor: this.props.cake.yumFactor ? this.props.cake.yumFactor : "",
       imageUrl: this.props.cake.imageUrl ? this.props.cake.imageUrl : "",
    };
-  
  }
 
   handleChange(e) {   
@@ -22,7 +21,8 @@ class EditView extends Component {
       console.log(this.state);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     const updatedCake = this.state;
     this.props.onCakeUpdate(this.props.cake.id, updatedCake);
     this.props.history.push('/');
@@ -34,10 +34,8 @@ class EditView extends Component {
   return (
     <div>
       <div className="col-lg-6">
-      <label for="name">Edit Cake</label>
+      <h2>Edit Cake</h2>
       </div>
-  
-      {console.log('params',this.props.match.params.id)}
        <CakeForm 
           name={this.state.name ? this.state.name : this.props.cake.name}         
           comment={this.state.comment ? this.state.comment : this.props.cake.comment}

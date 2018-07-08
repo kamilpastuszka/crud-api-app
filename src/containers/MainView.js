@@ -18,8 +18,6 @@ class MainView extends Component {
 
   render() {
    const errorMessage = this.props.error;
-   console.log(this.props.error);
-   console.log(this.props.cakes);
    const itemsArray = this.props.cakes.map((cake) => {
       return (
         <CakeList key={cake.id} imageUrl={cake.imageUrl} name={cake.name} id={cake.id} />
@@ -29,8 +27,12 @@ class MainView extends Component {
     return (
       <div>
         <Header/>
-          {errorMessage}
+          {errorMessage}    
+        <div className="galery"> 
+        <div className="row">      
           {itemsArray}
+        </div>
+        </div>
       </div>
     );
   }
