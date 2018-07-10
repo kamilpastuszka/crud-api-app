@@ -12,14 +12,17 @@ npm start - to run the application (Webpack build will be created and webpack-de
 
 ## Images
 
-# List View
+### List View
 <img src="./img/ListView.png" width="900px">
 
-# Single View
+
+### Single View
 <img src="./img/SingleView.png" width="900px">
 
-# Add View
+
+### Add View
 <img src="./img/AddView.png" width="900px">
 
-# Edit View
+
+### Edit View
 <img src="./img/EditView.png" width="900px">
