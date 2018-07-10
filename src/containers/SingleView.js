@@ -18,26 +18,29 @@ class SingleView extends Component {
   render() {
     return (
       <div>
-      <div className="well well-lg">
-      <h2> {this.props.cake.name} </h2>
-      <h4>{this.props.cake.comment}</h4>
-      <h4> yumFactor: <a href="#"> <span className="badge">{this.props.cake.yumFactor} </span></a></h4>
-      </div>
-     
-      <img src={this.props.cake.imageUrl}/>
-      <br/>
+        <div className="well well-lg">
+          <h2> {this.props.cake.name} </h2>
+          <h4>{this.props.cake.comment}</h4>
+          <h4> yumFactor: <a href="#"> <span className="badge">{this.props.cake.yumFactor} </span></a></h4>
       
-      <div className="row">
-      <button className="btn btn-lg btn-danger" onClick={this.deleteCake}>Delete</button>
+     
+          <img src={this.props.cake.imageUrl}/>
+           <br/>
+      
+           <div className="row">
+           <div className="single-view-btn-group">
+           <button className="btn btn-lg btn-danger" onClick={this.deleteCake}>Delete</button>
  
-      <Link to={`/edit/${this.props.cake.id}`}>
-      <button className="btn btn-lg btn-primary">Edit</button>
-      </Link>
+           <Link to={`/edit/${this.props.cake.id}`}>
+           <button className="btn btn-lg btn-primary">Edit</button>
+           </Link>
 
-      <Link to={`/`}>
-      <button className="btn btn-lg btn-warning">Cancel</button>
-      </Link>      
-      </div>
+          <Link to={`/`}>
+          <button className="btn btn-lg btn-warning">Cancel</button>
+           </Link>  
+         </div>   
+         </div>  
+        </div>
       </div>
     )
   }

@@ -36,7 +36,7 @@ export const addCakeSucess = (newCake) => {
     };
 };
 
-export const addCakeFailure = (error) => {
+export const addCakeFailure = ({error} ={}) => {
     return {
         type: actionTypes.ADD_CAKE_FAILURE,
         error
@@ -58,8 +58,7 @@ export const addCake = (cake) => {
         yumFactor: newCake.yumFactor
     })
       .then((newCake) => dispatch(addCakeSucess(newCake)))
-      .catch((error) => dispatch(addCakeFailure(error)));
-     console.log('inside dispatched action:', newCake); 
+      .catch((error) => dispatch(addCakeFailure(error)))
     };
 };
 
@@ -72,9 +71,10 @@ export const deleteCakeSuccess = ({id}) => {
     };
 };
 
-export const deleteCakeFailure = () => {
+export const deleteCakeFailure = ({error} = {}) => {
     return {
         type: actionTypes.DELETE_CAKE_FAILURE,
+        error
     }
 }
 
@@ -95,7 +95,7 @@ export const updateCakeSuccess = ({id, updatedCake}) => {
     };
 };
 
-export const updateCakeFailure = (error) => {
+export const updateCakeFailure = ({error}= {}) => {
     return {
         type: actionTypes.UPDATE_CAKE_FAILURE,
         error

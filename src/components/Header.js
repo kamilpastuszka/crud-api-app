@@ -7,8 +7,8 @@ export const Header = () => {
         <div className="col-3">
          <span className="logo-image"></span>
         </div>
-        <div className="col-3">
-         <Link to='/cakes/add' className='btn btn-lg btn-primary'>
+        <div className="col-9">
+         <Link to='/cakes/add' className='btn btn-lg btn-primary float-right'>
              Add Cake
         </Link>
        </div>

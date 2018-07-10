@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const CakeList = ({id, imageUrl, name}) => {
   return (
-  <div class="col-md-4">
+  <div className="col-md-4">
     <div className="thumbnail">
         <Link to={`/${id}`}>
           <img src={imageUrl}/>

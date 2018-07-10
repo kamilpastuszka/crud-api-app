@@ -5,28 +5,28 @@ export const CakeForm = (props) => (
 
       <form onSubmit={props.submit}>
 
-      <div className="form-group col-lg-8" >
+      <div className="form-group col-lg-6" >
       <label for="name">Name</label>
       <input type="text" className="form-control" name="name" 
         value={props.name} onChange={props.changed}/>
       </div>
 
-      <div className="form-group col-lg-8">
+      <div className="form-group col-lg-6">
       <label for="name">Comment</label>
       <textarea row="5" className="form-control" name="comment" value={props.comment} onChange={props.changed}/>
       </div>
     
-      <div className="form-group  col-lg-8">
+      <div className="form-group  col-lg-6">
       <label for="name">yumFactor</label>
-      <input type="number" className="form-control" name="yumFactor" value={props.yumFactor} onChange={props.changed}/>
+      <input type="number" min="1" max="5" className="form-control" name="yumFactor" value={props.yumFactor} onChange={props.changed}/>
       </div>
 
-      <div className="form-group col-lg-8">
+      <div className="form-group col-lg-6">
       <label for="name">image url</label>
       <input type="text" className="form-control" name="imageUrl"  value={props.imageUrl} onChange={props.changed} id="image" accept="image/png, image/jpeg"/>
       </div>
 
-      <div className="form-group  col-lg-8">
+      <div className="form-group  col-lg-6">
         <button className="btn btn-lg btn-success btn-add" type="submit">Save Cake</button> 
       </div>
       <br/>

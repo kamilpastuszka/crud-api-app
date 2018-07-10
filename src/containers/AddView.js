@@ -35,7 +35,9 @@ class AddView extends Component {
   render() {    
     return (
       <div>
+        <div className="col-lg-6">
         <h2> Add New Cake  </h2>
+        </div>
         <CakeForm
           name={this.state.name}
           comment={this.state.comment}

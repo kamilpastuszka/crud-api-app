@@ -13,12 +13,23 @@ class MainView extends Component {
   }
 
   componentDidMount() {
+    this.props.onFetchCakes();
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.cakes !== nextProps.cakes) {
+      return true;
+    }
+  }
+   
+  componentDidUpdate() {
     this.props.onFetchCakes()
   }
 
   render() {
    const errorMessage = this.props.error;
    const itemsArray = this.props.cakes.map((cake) => {
+  console.log(this.props.cakes);
       return (
         <CakeList key={cake.id} imageUrl={cake.imageUrl} name={cake.name} id={cake.id} />
       )
